@@ -2,18 +2,19 @@ import streamlit as st
 
 def draw_sidebar():
     # Language
-    lang_name_format = {'English' : 'en'}
+    lang_name_format = {'Portuguese' : 'pt', 'English' : 'en'}
     st.sidebar.header('Language')
-    lang = st.sidebar.radio('', ('English'))
+    lang = st.sidebar.radio('', ('Portuguese', 'English'))
     lang = lang_name_format[lang]
 
     # Tools
     st.sidebar.header('Extraction tools')
 
     st.sidebar.subheader('Actor entity extraction')
-    ACTOR_ENTITY_EXTRACTION_TOOLS = {'nltk' : False}
-    # ACTOR_ENTITY_EXTRACTION_TOOLS['spacy']    = st.sidebar.checkbox('spaCy', '1')
-    ACTOR_ENTITY_EXTRACTION_TOOLS['nltk']     = st.sidebar.checkbox('NLTK', '1')
+    # ACTOR_ENTITY_EXTRACTION_TOOLS = {'spacy' : False, 'nltk' : False, 'sparknlp' : False}
+    ACTOR_ENTITY_EXTRACTION_TOOLS = {'spacy' : False}
+    ACTOR_ENTITY_EXTRACTION_TOOLS['spacy']    = st.sidebar.checkbox('spaCy', '1')
+    # ACTOR_ENTITY_EXTRACTION_TOOLS['nltk']     = st.sidebar.checkbox('NLTK', '2')
     #ACTOR_ENTITY_EXTRACTION_TOOLS['sparknlp'] = st.sidebar.checkbox('Spark NLP', '3')
 
     st.sidebar.subheader('Time entity extraction')
