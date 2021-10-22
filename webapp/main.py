@@ -1,6 +1,7 @@
 import streamlit as st
 from session_state import SessionState, get
 import input_phase, output_phase
+import sys
 
 import requests, json
 url = 'https://tweet2story.herokuapp.com/'
@@ -49,5 +50,6 @@ def main():
         session_state.visualization_option = output_phase.app(session_state.text, session_state.annotation)
 
 if __name__ == '__main__':
+    sys.stdout.write("CLIENT SIDE START")
     init()
     main()
