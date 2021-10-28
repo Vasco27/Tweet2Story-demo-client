@@ -34,7 +34,7 @@ def draw_sidebar():
 
     st.sidebar.subheader('Objectal link extraction')
     OBJECTAL_LINK_EXTRACTION_TOOLS  = {'spacy' : False}
-    OBJECTAL_LINK_EXTRACTION_TOOLS['spacy'] = st.sidebar.checkbox('spacy', key='6', value=False)
+    OBJECTAL_LINK_EXTRACTION_TOOLS['spacy'] = st.sidebar.checkbox('spacy', key='6', value=True)
 
     # st.sidebar.subheader('Semantic Role link extraction')
     # SEMANTICROLE_LINK_EXTRACTION_TOOLS = {'allennlp' : False}

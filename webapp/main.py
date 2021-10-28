@@ -17,6 +17,7 @@ def rerun():
     raise st.script_runner.RerunException(st.script_request_queue.RerunData(None))
 
 def request(lang, publication_time, text, tools):
+    print(publication_time)
     request = {
         'lang': lang,
         'text': text,
@@ -52,6 +53,5 @@ def main():
         session_state.visualization_option = output_phase.app(session_state.text, session_state.annotation)
 
 if __name__ == '__main__':
-    sys.stdout.write("CLIENT SIDE START")
     init()
     main()
