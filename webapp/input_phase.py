@@ -89,7 +89,7 @@ def app():
     print(publication_time)
     print(type(publication_time))
     if isinstance(publication_time, str):
-        publication_time = datetime.strptime(publication_time)
+        publication_time = datetime.strptime(publication_time, format="%Y-%m-%d")
     narrative_text = st.text_area(label='Narrative Text', value=default_tweets, height=300)
 
     pressed_extract = st.button('Extract!')
