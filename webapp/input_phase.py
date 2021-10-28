@@ -86,6 +86,7 @@ def app():
     lang, tools = draw_sidebar()
 
     publication_time = str(st.date_input('Publication Date'))
+    print(publication_time)
     # if isinstance(publication_time, str):
     #     publication_time = datetime.strptime(publication_time, "%Y-%m-%d").isoformat()
     # else:
