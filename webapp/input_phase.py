@@ -1,12 +1,21 @@
 import streamlit as st
-from datetime import datetime
+# from datetime import datetime
 
-default_tweets = """ts fred continues to weaken as it moves away from the cape verde islands.
-tropical storm grace forms in eastern atlantic.
-ts grace is strengthening with 50 mph winds however the system is expected to weaken in the extended forecast.
-tropical storm grace packing wind gusts of 58 mph.
-tropical storm grace will likely dissipate east of the lesser antilles.
-grace is likely to weaken to a tropical rainstorm prior to reaching the lesser antilles.
+default_tweets = """lydia ko off to a solid start at evian championship.
+lydia kos drawing on past experience in her bid to lift her first major trophy ahead of final round of evian championship at lake geneva.
+lydia ko becomes youngest ever winner of a major at the evian.
+lydia ko records first ever major title overnight youngest ever major winner.
+kiwi golfer lydiako fired a bogey free eight under 63 to become the youngest winner of a womens major at the evian championship in france.
+teenager ko makes history with evian win.
+lydia ko takes scintillating major win in her stride.
+teenager lydia ko makes history at evian.
+lydia ko says she was spurred on to her major triumph by a vocal young fan during the weekend.
+evian les bains france with two holes left to.
+18 year old lydia ko wins evian championship to become youngest lpga major champion.
+amazing teen golfer lydia ko hailed over major record.
+new zealand golfer lydia ko already looking ahead to rio olympics after major success.
+teenager lydia ko poised for golfing riches after evian championship win.
+skysportnz lydia ko not even a mention.
 """
 
 def draw_sidebar():

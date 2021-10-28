@@ -4,6 +4,7 @@ import input_phase, output_phase
 import sys
 
 import requests, json
+# url = "http://localhost:5000"
 url = 'https://tweet2story.herokuapp.com/'
 
 def init():
