@@ -86,10 +86,10 @@ def app():
     lang, tools = draw_sidebar()
 
     publication_time = str(st.date_input('Publication Date'))
-    print(publication_time)
-    print(type(publication_time))
-    if isinstance(publication_time, str):
-        publication_time = datetime.strptime(publication_time, "%Y-%m-%d").isoformat()
+    # if isinstance(publication_time, str):
+    #     publication_time = datetime.strptime(publication_time, "%Y-%m-%d").isoformat()
+    # else:
+    #     publication_time = publication_time.isoformat()
     narrative_text = st.text_area(label='Narrative Text', value=default_tweets, height=300)
 
     pressed_extract = st.button('Extract!')
