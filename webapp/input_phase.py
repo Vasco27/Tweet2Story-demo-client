@@ -15,14 +15,13 @@ evian les bains france with two holes left to.
 amazing teen golfer lydia ko hailed over major record.
 new zealand golfer lydia ko already looking ahead to rio olympics after major success.
 teenager lydia ko poised for golfing riches after evian championship win.
-skysportnz lydia ko not even a mention.
-"""
+skysportnz lydia ko not even a mention."""
 
 def draw_sidebar():
     # Language
     lang_name_format = {'Portuguese' : 'pt', 'English' : 'en'}
-    st.sidebar.header('Language')
-    lang = st.sidebar.radio('', ('English', "Portuguese"))
+    #st.sidebar.header('Language')
+    lang = st.sidebar.radio('Language', ('English', "Portuguese"))
     lang = lang_name_format[lang]
 
     # Tools
@@ -30,9 +29,9 @@ def draw_sidebar():
 
     st.sidebar.subheader('Actor entity extraction')
     ACTOR_ENTITY_EXTRACTION_TOOLS = {'spacy' : False, 'nltk' : False}
+    # ACTOR_ENTITY_EXTRACTION_TOOLS = {'spacy' : False}
     ACTOR_ENTITY_EXTRACTION_TOOLS['spacy']    = st.sidebar.checkbox('spaCy', key='1', value=True)
-    # ACTOR_ENTITY_EXTRACTION_TOOLS['nltk']     = st.sidebar.checkbox('NLTK', key='2', value=False)
-    # ACTOR_ENTITY_EXTRACTION_TOOLS['sparknlp'] = st.sidebar.checkbox('Spark NLP', '3')
+    ACTOR_ENTITY_EXTRACTION_TOOLS['nltk']     = st.sidebar.checkbox('NLTK', key='2', value=False)
 
     st.sidebar.subheader('Time entity extraction')
     TIME_ENTITY_EXTRACTION_TOOLS = {'py_heideltime' : False}
@@ -46,15 +45,10 @@ def draw_sidebar():
     OBJECTAL_LINK_EXTRACTION_TOOLS  = {'spacy' : False}
     OBJECTAL_LINK_EXTRACTION_TOOLS['spacy'] = st.sidebar.checkbox('spacy', key='6', value=True)
 
-    # st.sidebar.subheader('Semantic Role link extraction')
-    # SEMANTICROLE_LINK_EXTRACTION_TOOLS = {'allennlp' : False}
-    # SEMANTICROLE_LINK_EXTRACTION_TOOLS['allennlp'] = st.sidebar.checkbox('Allen NLP', key='7', value=True)
-
     return lang, {'actor_extraction_tools'              : [tool for tool in ACTOR_ENTITY_EXTRACTION_TOOLS if ACTOR_ENTITY_EXTRACTION_TOOLS[tool]],
                   'time_extraction_tools'               : [tool for tool in TIME_ENTITY_EXTRACTION_TOOLS if TIME_ENTITY_EXTRACTION_TOOLS[tool]],
                   'event_extraction_tools'              : [tool for tool in EVENT_ENTITY_EXTRACTION_TOOLS if EVENT_ENTITY_EXTRACTION_TOOLS[tool]],
                   'objectal_link_extraction_tools'      : [tool for tool in OBJECTAL_LINK_EXTRACTION_TOOLS if OBJECTAL_LINK_EXTRACTION_TOOLS[tool]]
-                #   'semantic_role_link_extraction_tools' : [tool for tool in SEMANTICROLE_LINK_EXTRACTION_TOOLS if SEMANTICROLE_LINK_EXTRACTION_TOOLS[tool]]
                  }
 
 
@@ -95,11 +89,6 @@ def app():
     lang, tools = draw_sidebar()
 
     publication_time = str(st.date_input('Publication Date'))
-    print(publication_time)
-    # if isinstance(publication_time, str):
-    #     publication_time = datetime.strptime(publication_time, "%Y-%m-%d").isoformat()
-    # else:
-    #     publication_time = publication_time.isoformat()
     narrative_text = st.text_area(label='Narrative Text', value=default_tweets, height=300)
 
     pressed_extract = st.button('Extract!')

@@ -1,10 +1,8 @@
 import streamlit as st
 from session_state import SessionState, get
 import input_phase, output_phase
-import sys
 
 import requests, json
-# url = "http://localhost:5000"
 url = 'https://tweet2story.herokuapp.com/'
 
 def init():
@@ -26,7 +24,6 @@ def request(lang, publication_time, text, tools):
         'time_extraction_tools': tools['time_extraction_tools'],
         'event_extraction_tools': tools['event_extraction_tools'],
         'objectal_link_extraction_tools': tools['objectal_link_extraction_tools']
-        # 'semantic_role_link_extraction_tools': tools['semantic_role_link_extraction_tools']
              }
 
     response = requests.post(url, data=json.dumps(request, indent=1))

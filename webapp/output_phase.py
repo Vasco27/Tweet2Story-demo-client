@@ -2,7 +2,7 @@ import streamlit as st
 
 def draw_sidebar():
     st.sidebar.header('Visualization')
-    visualization_option = st.sidebar.radio('', ('Narrative', 'Annotation', 'DRS', 'MSC', 'Knowledge Graph'))
+    visualization_option = st.sidebar.radio('Options', ('Narrative', 'Annotation', 'DRS', 'MSC', 'Knowledge Graph'))
     return visualization_option
 
 def app(narrative_text, narrative_annotation):
