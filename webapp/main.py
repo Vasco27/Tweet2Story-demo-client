@@ -17,14 +17,16 @@ def rerun():
     raise st.script_runner.RerunException(st.script_request_queue.RerunData(None))
 
 def request(lang, publication_time, text, tools):
-    request = {'lang': lang,
-             'text': text,
-             'publication_time': publication_time,
-             'actor_extraction_tools': tools['actor_extraction_tools'],
-             'time_extraction_tools': tools['time_extraction_tools'],
-             'event_extraction_tools': tools['event_extraction_tools'],
-             'objectal_link_extraction_tools': tools['objectal_link_extraction_tools'],
-             'semantic_role_link_extraction_tools': tools['semantic_role_link_extraction_tools']}
+    request = {
+        'lang': lang,
+        'text': text,
+        'publication_time': publication_time,
+        'actor_extraction_tools': tools['actor_extraction_tools'],
+        'time_extraction_tools': tools['time_extraction_tools'],
+        'event_extraction_tools': tools['event_extraction_tools'],
+        'objectal_link_extraction_tools': tools['objectal_link_extraction_tools']
+        # 'semantic_role_link_extraction_tools': tools['semantic_role_link_extraction_tools']
+             }
 
     response = requests.post(url, data=json.dumps(request, indent=1))
     return response.text

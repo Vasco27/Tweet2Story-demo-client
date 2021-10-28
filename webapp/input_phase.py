@@ -29,22 +29,22 @@ def draw_sidebar():
     TIME_ENTITY_EXTRACTION_TOOLS['py_heideltime'] = st.sidebar.checkbox('py_heideltime', key='4', value=True)
 
     st.sidebar.subheader('Event entity extraction')
-    EVENT_ENTITY_EXTRACTION_TOOLS = {'allennlp' : False}
-    EVENT_ENTITY_EXTRACTION_TOOLS['allennlp'] = st.sidebar.checkbox('Allen NLP', key='5', value=True)
+    EVENT_ENTITY_EXTRACTION_TOOLS = {'spacy' : False}
+    EVENT_ENTITY_EXTRACTION_TOOLS['spacy'] = st.sidebar.checkbox('spacy', key='5', value=True)
 
     st.sidebar.subheader('Objectal link extraction')
-    OBJECTAL_LINK_EXTRACTION_TOOLS  = {'allennlp' : False}
-    OBJECTAL_LINK_EXTRACTION_TOOLS['allennlp'] = st.sidebar.checkbox('Allen NLP', key='6', value=False)
+    OBJECTAL_LINK_EXTRACTION_TOOLS  = {'spacy' : False}
+    OBJECTAL_LINK_EXTRACTION_TOOLS['spacy'] = st.sidebar.checkbox('spacy', key='6', value=False)
 
-    st.sidebar.subheader('Semantic Role link extraction')
-    SEMANTICROLE_LINK_EXTRACTION_TOOLS = {'allennlp' : False}
-    SEMANTICROLE_LINK_EXTRACTION_TOOLS['allennlp'] = st.sidebar.checkbox('Allen NLP', key='7', value=True)
+    # st.sidebar.subheader('Semantic Role link extraction')
+    # SEMANTICROLE_LINK_EXTRACTION_TOOLS = {'allennlp' : False}
+    # SEMANTICROLE_LINK_EXTRACTION_TOOLS['allennlp'] = st.sidebar.checkbox('Allen NLP', key='7', value=True)
 
     return lang, {'actor_extraction_tools'              : [tool for tool in ACTOR_ENTITY_EXTRACTION_TOOLS if ACTOR_ENTITY_EXTRACTION_TOOLS[tool]],
                   'time_extraction_tools'               : [tool for tool in TIME_ENTITY_EXTRACTION_TOOLS if TIME_ENTITY_EXTRACTION_TOOLS[tool]],
                   'event_extraction_tools'              : [tool for tool in EVENT_ENTITY_EXTRACTION_TOOLS if EVENT_ENTITY_EXTRACTION_TOOLS[tool]],
-                  'objectal_link_extraction_tools'      : [tool for tool in OBJECTAL_LINK_EXTRACTION_TOOLS if OBJECTAL_LINK_EXTRACTION_TOOLS[tool]],
-                  'semantic_role_link_extraction_tools' : [tool for tool in SEMANTICROLE_LINK_EXTRACTION_TOOLS if SEMANTICROLE_LINK_EXTRACTION_TOOLS[tool]]
+                  'objectal_link_extraction_tools'      : [tool for tool in OBJECTAL_LINK_EXTRACTION_TOOLS if OBJECTAL_LINK_EXTRACTION_TOOLS[tool]]
+                #   'semantic_role_link_extraction_tools' : [tool for tool in SEMANTICROLE_LINK_EXTRACTION_TOOLS if SEMANTICROLE_LINK_EXTRACTION_TOOLS[tool]]
                  }
 
 
