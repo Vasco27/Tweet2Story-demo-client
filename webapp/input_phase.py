@@ -20,9 +20,9 @@ skysportnz lydia ko not even a mention."""
 def draw_sidebar():
     # Language
     lang_name_format = {'Portuguese' : 'pt', 'English' : 'en'}
-    #st.sidebar.header('Language')
+    st.sidebar.header('Language')
     # lang = st.sidebar.radio('Language', ('English', "Portuguese"))
-    lang = st.sidebar.radio('Language', ('English'))
+    lang = st.sidebar.radio('', ['English'])
     lang = lang_name_format[lang]
 
     # Tools
