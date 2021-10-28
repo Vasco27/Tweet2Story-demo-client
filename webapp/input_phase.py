@@ -1,4 +1,5 @@
 import streamlit as st
+from datetime import datetime
 
 default_tweets = """ts fred continues to weaken as it moves away from the cape verde islands.
 tropical storm grace forms in eastern atlantic.
@@ -50,10 +51,10 @@ def draw_sidebar():
 
 def valid_input(tools, narrative_text):
     # Check if it's selected, at least, one tool per extraction
-    # for key in tools:
-    #     if len(tools[key]) == 0:
-    #         signal_error(key)
-    #         return False
+    for key in tools:
+        if len(tools[key]) == 0:
+            signal_error(key)
+            return False
 
     # Check if narrative text isn't empty
     if narrative_text == '':
@@ -85,6 +86,10 @@ def app():
     lang, tools = draw_sidebar()
 
     publication_time = str(st.date_input('Publication Date'))
+    print(publication_time)
+    print(type(publication_time))
+    if isinstance(publication_time, str):
+        publication_time = datetime.strptime(publication_time)
     narrative_text = st.text_area(label='Narrative Text', value=default_tweets, height=300)
 
     pressed_extract = st.button('Extract!')
